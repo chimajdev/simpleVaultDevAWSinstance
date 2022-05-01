@@ -21,7 +21,7 @@ output "amazon_linux" {
 resource "aws_instance" "myec2" {
   ami                    = data.aws_ami.amazon_linux.id
   instance_type          = "t2.micro"
-  key_name               = "salman"
+  key_name               = "YOUR_EC2_ACCESS_KEY_NAME"
   vpc_security_group_ids = [aws_security_group.allow_access.id]
 
   provisioner "remote-exec" {
@@ -38,7 +38,7 @@ resource "aws_instance" "myec2" {
     connection {
       type        = "ssh"
       user        = "ec2-user"
-      private_key = file("./salman.pem")
+      private_key = file("./YOUR_EC2_ACCESS_KEY.pem")
       host        = self.public_ip
     }
   }
