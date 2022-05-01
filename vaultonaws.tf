@@ -58,21 +58,21 @@ resource "aws_security_group" "allow_access" {
     from_port   = 8200
     to_port     = 8200
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["your_ip/32"]
   }
   ingress {
     description = "HTTPS into VPC"
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["your_ip/32"]
   }
   ingress {
     description = "SSH into VPC"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["your_ip/32"]
   }
   egress {
     description = "Outbound Allowed"
